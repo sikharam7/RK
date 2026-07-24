@@ -259,7 +259,7 @@
         scroll-snap-align: start;
     }
     .card {
-        max-width: 460px;
+        max-width: 560px;
     }
 }
 </style>
