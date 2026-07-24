@@ -231,16 +231,35 @@
     .side-column { display: none; }
 }
 */
+.mobile-gallery {
+    display: none;
+}
+
 @media (max-width: 900px) {
     .side-column {
-        width: 55px;
+        display: none;
     }
-    .side-column img {
-        width: 45px;
-        height: 45px;
+    .mobile-gallery {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 4px 4px 12px;
+        margin: 16px 0;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    .mobile-gallery img {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid #fff;
+        box-shadow: 0 4px 12px rgba(11,37,69,0.15);
+        flex-shrink: 0;
+        scroll-snap-align: start;
     }
     .card {
-        max-width: calc(100% - 130px);
+        max-width: 460px;
     }
 }
 </style>
@@ -289,7 +308,16 @@
       <p class="message">
         Every team is better because of the people who shape it and you shaped ours in ways we won't forget. Thank you for the guidance, the patience, and the trust. Wherever this next chapter takes you, we know it'll be lucky to have you.
       </p>
-
+<div class="mobile-gallery">
+  <img src="photo1.jpg" alt="Memory 1">
+  <img src="photo2.jpg" alt="Memory 2">
+  <img src="photo3.jpg" alt="Memory 3">
+  <img src="photo4.jpg" alt="Memory 4">
+  <img src="photo5.jpg" alt="Memory 5">
+  <img src="photo6.jpg" alt="Memory 6">
+  <img src="photo7.jpg" alt="Memory 7">
+  <img src="photo8.jpg" alt="Memory 8">
+</div>
       <div class="audio-wrap">
         <div class="audio-label">🎧 A Little Something from Someone</div>
         <audio controls preload="none">
