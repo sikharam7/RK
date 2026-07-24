@@ -178,9 +178,84 @@
     h1 { font-size: 28px; }
     .content { padding: 32px 24px 26px; }
   }
+.side-column {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 130px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.side-column.left { left: 0; }
+.side-column.right { right: 0; }
+
+.side-column .strip {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: scrollUp 22s linear infinite;
+}
+
+.side-column.right .strip {
+    animation: scrollDown 22s linear infinite;
+}
+
+.side-column img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 auto;
+    opacity: 0.85;
+}
+
+@keyframes scrollUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+    from { transform: translateY(-50%); }
+    to { transform: translateY(0); }
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .side-column { display: none; }
+}
 </style>
 </head>
 <body>
+<div class="side-column left">
+  <div class="strip">
+    <img src="photo1.jpg" alt="">
+    <img src="photo2.jpg" alt="">
+    <img src="photo3.jpg" alt="">
+    <img src="photo4.jpg" alt="">
+    <img src="photo1.jpg" alt="">
+    <img src="photo2.jpg" alt="">
+    <img src="photo3.jpg" alt="">
+    <img src="photo4.jpg" alt="">
+  </div>
+</div>
+
+<div class="side-column right">
+  <div class="strip">
+    <img src="photo5.jpg" alt="">
+    <img src="photo6.jpg" alt="">
+    <img src="photo7.jpg" alt="">
+    <img src="photo8.jpg" alt="">
+    <img src="photo5.jpg" alt="">
+    <img src="photo6.jpg" alt="">
+    <img src="photo7.jpg" alt="">
+    <img src="photo8.jpg" alt="">
+  </div>
+</div>
 
   <div class="card">
     <div class="band"></div>
